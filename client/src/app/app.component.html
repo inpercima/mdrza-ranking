@@ -1,0 +1,58 @@
+<div>
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="teamname" #input>
+  </mat-form-field>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Teamname Column -->
+    <ng-container matColumnDef="teamname">
+      <mat-header-cell *matHeaderCellDef>Teamname</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.teamname }} </mat-cell>
+    </ng-container>
+
+    <!-- Summe km Column -->
+    <ng-container matColumnDef="summe">
+      <mat-header-cell *matHeaderCellDef>Summe km</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.Summe}}</mat-cell>
+    </ng-container>
+
+    <!-- Tage Column -->
+    <ng-container matColumnDef="tage">
+      <mat-header-cell *matHeaderCellDef>Tage</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.Tage}}</mat-cell>
+    </ng-container>
+
+    <!-- Anzahl Teammitglieder Column -->
+    <ng-container matColumnDef="AnzTeammember">
+      <mat-header-cell *matHeaderCellDef>Anzahl Teammitglieder</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.AnzTeammember}} </mat-cell>
+    </ng-container>
+
+    <!-- Avg Km Column -->
+    <ng-container matColumnDef="AvgKM">
+      <mat-header-cell *matHeaderCellDef> Avg Km </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.AvgKM}} </mat-cell>
+    </ng-container>
+
+    <!-- Avg Tage Column -->
+    <ng-container matColumnDef="AvgDays">
+      <mat-header-cell *matHeaderCellDef> Avg Tage </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.AvgDays}} </mat-cell>
+    </ng-container>
+
+    <!-- Rang Column -->
+    <ng-container matColumnDef="rank">
+      <mat-header-cell *matHeaderCellDef> Rang </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.rank}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

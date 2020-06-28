@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  activateLogin: false,
+  api: './api/',
+  apiSuffix: '',
+  appname: 'MdRzA Ranking',
+  defaultRoute: '',
+  production: false,
+  redirectNotFound: true,
+  showFeatures: false,
+  showLogin: false,
+  theme: 'indigo-pink',
 };
 
 /*

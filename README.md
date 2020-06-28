@@ -1,27 +1,48 @@
-# MdrzaRanking
+# MdRzA Ranking
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
 
-## Development server
+Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project was generated with [swaaplate](https://github.com/inpercima/swaaplate) version 2.0.0-SNAPSHOT.
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Angular CLI
 
-## Build
+* `angular-cli 10.0.0` or higher
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Apache and php
 
-## Running unit tests
+* `Apache 2.4` or higher
+* `php 7.3` or higher
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Node, npm or yarn
 
-## Running end-to-end tests
+* `node 12.16.1` or higher in combination with
+  * `npm 6.13.4` or higher or
+  * `yarn 1.22.4` or higher, used in this repository
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Dependency check
 
-## Further help
+Some libraries could not be updated b/c of peer dependencies or knowing issues.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+| library    | current version | wanted version | reason |
+| ---------- | --------------- | -------------- | ------ |
+| copy-webpack-plugin | 4.6.0 | 5.1.1 | "copy-webpack-plugin@5.1.1" has unmet peer dependency "webpack@^4.0.0" |
+
+## Getting started
+
+```bash
+# clone project
+git clone https://github.com/inpercima/mdrza-ranking
+cd mdrza-ranking
+```
+
+## Usage
+
+### Modules
+
+For the client check [mdrza-ranking - client](./client).
+
+For the server check [mdrza-ranking - server](./server).

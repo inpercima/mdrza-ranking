@@ -1,0 +1,63 @@
+{
+  "author": "Marcel Jänicke",
+  "contributors": [
+    {
+      "name": "Marcel Jänicke",
+      "email": "inpercima@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "@angular/animations": "10.0.1",
+    "@angular/common": "10.0.1",
+    "@angular/compiler": "10.0.1",
+    "@angular/core": "10.0.1",
+    "@angular/forms": "10.0.1",
+    "@angular/platform-browser": "10.0.1",
+    "@angular/platform-browser-dynamic": "10.0.1",
+    "@angular/router": "10.0.1",
+    "rxjs": "6.5.5",
+    "tslib": "2.0.0",
+    "zone.js": "0.10.3",
+    "@angular/cdk": "10.0.0",
+    "@angular/flex-layout": "10.0.0-beta.32",
+    "@angular/material": "10.0.0"
+  },
+  "description": "Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'",
+  "devDependencies": {
+    "@angular-devkit/build-angular": "0.1000.0",
+    "@angular/cli": "10.0.0",
+    "@angular/compiler-cli": "10.0.1",
+    "@types/node": "14.0.14",
+    "@types/jasmine": "3.5.11",
+    "@types/jasminewd2": "2.0.8",
+    "codelyzer": "6.0.0-next.1",
+    "jasmine-core": "3.5.0",
+    "jasmine-spec-reporter": "5.0.2",
+    "karma": "5.1.0",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-coverage-istanbul-reporter": "3.0.3",
+    "karma-jasmine": "3.3.1",
+    "karma-jasmine-html-reporter": "1.5.4",
+    "protractor": "7.0.0",
+    "ts-node": "8.10.2",
+    "tslint": "6.1.2",
+    "typescript": "3.9.5",
+    "copy-webpack-plugin": "4.6.0",
+    "@angular-builders/custom-webpack": "10.0.0-beta.0"
+  },
+  "engines": {
+    "node": ">=12.16.1"
+  },
+  "homepage": "http://mdrza-ranking.inpercima.net",
+  "license": "MIT",
+  "name": "mdrza-ranking",
+  "private": true,
+  "repository": "https://github.com/inpercima/mdrza-ranking",
+  "scripts": {
+    "build:dev": "ng lint && ng build --configuration=dev",
+    "serve:dev": "ng serve -o --configuration=dev",
+    "watch:dev": "ng build --watch --configuration=dev",
+    "build:prod": "ng lint && ng build --prod"
+  },
+  "version": "1.0.0-SNAPSHOT"
+}

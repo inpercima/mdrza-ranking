@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display title in toolbar', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('mdrza-ranking app is running!');
+    expect(page.getTitleText()).toEqual('MdRzA Ranking');
   });
 
   afterEach(async () => {

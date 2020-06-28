@@ -1,0 +1,55 @@
+{
+  "client": {
+    "buildDir": "dist",
+    "ghUser": "inpercima",
+    "installDependencies": true,
+    "language": "en",
+    "packageJson": {
+      "contributors": [{
+        "name": "Marcel Jänicke",
+        "email": "inpercima@gmail.com"
+      }],
+      "homepage": "http://mdrza-ranking.inpercima.net",
+      "repository": "https://github.com/inpercima/mdrza-ranking"
+    },
+    "prefix": "mr",
+    "routing": {
+      "enabled": false,
+      "features": {
+        "default": "",
+        "name": "",
+        "show": false
+      },
+      "login": {
+        "activate": false,
+        "enabled": false,
+        "name": "",
+        "show": false
+      },
+      "notFound": {
+        "enabled": false,
+        "name": "",
+        "redirect": true
+      }
+    },
+    "theme": "indigo-pink",
+    "useGoogleFonts": true,
+    "useYarn": true
+  },
+  "general": {
+    "author": "Marcel Jänicke",
+    "description": "Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'",
+    "name": "mdrza-ranking",
+    "title": "MdRzA Ranking",
+    "useDocker": false,
+    "useMITLicense": true,
+    "useMock": false
+  },
+  "server": {
+    "backend": "php",
+    "htaccess": true,
+    "management": "",
+    "packagePath": "",
+    "serverAsApi": true
+  }
+}

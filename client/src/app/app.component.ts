@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute } from '@angular/router';
 
 import { MdrzaService } from './mdrza.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'mr-root',
@@ -15,12 +17,15 @@ export class AppComponent implements OnInit {
   dataSource = new MatTableDataSource();
   displayedColumns: string[] = ['teamname', 'summe', 'tage', 'AnzTeammember', 'AvgKM', 'AvgDays', 'rank'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  filter: string;
 
-  constructor(private mdrzaService: MdrzaService) { }
+  constructor(private activatedRoute: ActivatedRoute, private mdrzaService: MdrzaService) { }
 
   ngOnInit(): void {
+    const queryParamMap = new URL(location.href).searchParams.get('teams');
     this.mdrzaService.list().subscribe(response => {
       this.dataSource = new MatTableDataSource(response);
+
       this.dataSource.paginator = this.paginator;
       this.dataSource.filterPredicate = (data: any, filterValue: string): boolean => {
         filterValue = filterValue.slice(-1) === ',' ? filterValue.slice(0, -1) : filterValue;
@@ -34,6 +39,11 @@ export class AppComponent implements OnInit {
         }
         return hasMatch;
       };
+
+      if (queryParamMap) {
+        this.filter = queryParamMap;
+        this.applyFilter(this.filter);
+      }
     });
   }
 

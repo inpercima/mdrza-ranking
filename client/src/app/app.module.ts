@@ -8,6 +8,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,10 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     MatPaginatorModule,
     MatTableModule,
+    FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    RouterModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]

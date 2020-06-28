@@ -1,7 +1,7 @@
 <div>
   <mat-form-field>
     <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="teamname" #input>
+    <input matInput [(ngModel)]="filter" (keyup)="applyFilter($event.target.value)" placeholder="teamname" #input>
   </mat-form-field>
 
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

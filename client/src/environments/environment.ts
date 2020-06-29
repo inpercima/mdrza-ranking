@@ -12,7 +12,7 @@ export const environment = {
   redirectNotFound: true,
   showFeatures: false,
   showLogin: false,
-  theme: 'indigo-pink',
+  theme: 'deeppurple-amber',
 };
 
 /*

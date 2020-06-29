@@ -152,7 +152,7 @@ Defines whether the login route will be displayed in navigation or not.
 
 Name of a build-in theme from angular-material or a custom light or dark theme.
 
-* default: `indigo-pink`
+* default: `deeppurple-amber`
 * type: `string`
 * values: `deeppurple-amber`/`indigo-pink`/`pink-bluegrey`/`purple-green`/`custom-light`/`custom-dark`
 

@@ -1,5 +1,6 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, ViewChild, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Title } from '@angular/platform-browser';
@@ -16,11 +17,11 @@ export class AppComponent implements OnInit {
 
   appname: string;
 
+  filterForm: FormGroup;
+
   dataSource = new MatTableDataSource();
 
   displayedColumns: string[] = ['rank', 'name', 'sumKm', 'sumDays', 'avgKm', 'avgDays', 'member'];
-
-  filter: string;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -41,6 +42,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.filterForm = new FormGroup({
+      filter: new FormControl(''),
+    });
     this.mdrzaService.list().subscribe(response => {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
@@ -49,7 +53,7 @@ export class AppComponent implements OnInit {
         const filters = filterValue.trim().split(',');
         let hasMatch = false;
         for (const filter of filters) {
-          hasMatch = data.teamname.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) >= 0;
+          hasMatch = data.name.trim().toLocaleLowerCase().indexOf(filter.trim().toLocaleLowerCase()) >= 0;
           if (hasMatch) {
             break;
           }
@@ -58,8 +62,9 @@ export class AppComponent implements OnInit {
       };
       const teams = new URL(location.href).searchParams.get('teams');
       if (teams) {
-        this.filter = teams;
-        this.applyFilter(this.filter);
+        const filter = this.filterForm.get('filter');
+        filter.setValue(teams);
+        this.applyFilter(filter.value);
       }
     });
   }

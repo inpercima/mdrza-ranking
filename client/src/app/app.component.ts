@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
     this.overlayContainer.getContainerElement().classList.add(`${environment.theme}-theme`);
   }
 
-  get f() {
+  get f(): any {
     return this.filterForm.controls;
   }
 

@@ -1,7 +1,9 @@
+import { Clipboard } from '@angular/cdk/clipboard';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, ViewChild, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Title } from '@angular/platform-browser';
 
@@ -35,15 +37,20 @@ export class AppComponent implements OnInit {
    */
   @HostBinding('class') class = `${environment.theme}-theme`;
 
-  public constructor(private titleService: Title, public overlayContainer: OverlayContainer, private mdrzaService: MdrzaService) {
+  public constructor(private formBuilder: FormBuilder, private titleService: Title, public overlayContainer: OverlayContainer,
+                     private clipboard: Clipboard, private snackBar: MatSnackBar, private mdrzaService: MdrzaService) {
     this.appname = environment.appname;
     this.titleService.setTitle(this.appname);
     this.overlayContainer.getContainerElement().classList.add(`${environment.theme}-theme`);
   }
 
+  get f() {
+    return this.filterForm.controls;
+  }
+
   ngOnInit(): void {
-    this.filterForm = new FormGroup({
-      filter: new FormControl(''),
+    this.filterForm = this.formBuilder.group({
+      filter: ['', Validators.required]
     });
     this.mdrzaService.list().subscribe(response => {
       this.dataSource = new MatTableDataSource(response);
@@ -62,14 +69,23 @@ export class AppComponent implements OnInit {
       };
       const teams = new URL(location.href).searchParams.get('teams');
       if (teams) {
-        const filter = this.filterForm.get('filter');
-        filter.setValue(teams);
-        this.applyFilter(filter.value);
+        this.f.filter.setValue(teams.trim());
+        this.applyFilter(this.f.filter.value);
       }
     });
   }
 
   applyFilter(value: string): void {
     this.dataSource.filter = value.trim().toLowerCase();
+  }
+
+  onSubmit(): void {
+    const url = new URL(location.href);
+    url.searchParams.set('teams', this.f.filter.value);
+    this.clipboard.copy(url.href);
+    this.snackBar.open('Teams copied to clipboard', 'Ready', {
+      duration: 3000,
+      verticalPosition: 'top',
+    });
   }
 }

@@ -29,7 +29,7 @@ Some libraries could not be updated b/c of peer dependencies or knowing issues.
 
 | library    | current version | wanted version | reason |
 | ---------- | --------------- | -------------- | ------ |
-| copy-webpack-plugin | 4.6.0 | 6.0.3 | "copy-webpack-plugin@6.0.3" has unmet peer dependency "webpack@^4.37.0 || ^5.0.0" |
+| copy-webpack-plugin | 4.6.0 | 6.0.3 | "copy-webpack-plugin@6.0.3" has unmet peer dependency "webpack@^4.37.0 \|\| ^5.0.0" |
 
 ## Getting started
 

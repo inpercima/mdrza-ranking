@@ -10,7 +10,7 @@ This project was generated with [swaaplate](https://github.com/inpercima/swaapla
 
 ### Angular CLI
 
-* `angular-cli 10.0.0` or higher
+* `angular-cli 10.0.2` or higher
 
 ### Apache and php
 
@@ -29,7 +29,7 @@ Some libraries could not be updated b/c of peer dependencies or knowing issues.
 
 | library    | current version | wanted version | reason |
 | ---------- | --------------- | -------------- | ------ |
-| copy-webpack-plugin | 4.6.0 | 5.1.1 | "copy-webpack-plugin@5.1.1" has unmet peer dependency "webpack@^4.0.0" |
+| copy-webpack-plugin | 4.6.0 | 6.0.3 | "copy-webpack-plugin@6.0.3" has unmet peer dependency "webpack@^4.37.0 || ^5.0.0" |
 
 ## Getting started
 

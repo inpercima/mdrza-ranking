@@ -1,0 +1,60 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxFlex="80">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="filterForm" fxLayout="row" fxLayoutAlign="center" novalidate (ngSubmit)="onSubmit()">
+          <mat-form-field fxFlex="90" hintLabel="Enter the teams you want to see in contest and create a url to send to friends.">
+            <input matInput placeholder="Teams" formControlName="filter" (keyup)="applyFilter($event.target.value)">
+          </mat-form-field>
+          <button fxFlex="8" fxFlexOffset="2" mat-raised-button color="primary" [disabled]="!this.filterForm.valid">URL</button>
+        </form>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource">
+          <!-- Rang Column -->
+          <ng-container matColumnDef="rank">
+            <mat-header-cell *matHeaderCellDef>Rang</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.rank}}</mat-cell>
+          </ng-container>
+          <!-- Teamname Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+          </ng-container>
+
+          <!-- Summe km Column -->
+          <ng-container matColumnDef="sumKm">
+            <mat-header-cell *matHeaderCellDef>Summe km</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.sumKm}}</mat-cell>
+          </ng-container>
+
+          <!-- Summe Tage Column -->
+          <ng-container matColumnDef="sumDays">
+            <mat-header-cell *matHeaderCellDef fxHide.lt-sm="true">Summe Tage</mat-header-cell>
+            <mat-cell *matCellDef="let element" fxHide.lt-sm="true">{{element.sumDays}}</mat-cell>
+          </ng-container>
+
+          <!-- Avg Km Column -->
+          <ng-container matColumnDef="avgKm">
+            <mat-header-cell *matHeaderCellDef>Avg Km</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.avgKm}}</mat-cell>
+          </ng-container>
+
+          <!-- Avg Tage Column -->
+          <ng-container matColumnDef="avgDays">
+            <mat-header-cell *matHeaderCellDef fxHide.lt-sm="true">Avg Tage</mat-header-cell>
+            <mat-cell *matCellDef="let element" fxHide.lt-sm="true">{{element.avgDays}}</mat-cell>
+          </ng-container>
+
+          <!-- Anzahl Mitglieder Column -->
+          <ng-container matColumnDef="member">
+            <mat-header-cell *matHeaderCellDef fxHide.lt-md="true">Anzahl Mitglieder</mat-header-cell>
+            <mat-cell *matCellDef="let element" fxHide.lt-md="true"> {{element.member}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

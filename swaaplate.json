@@ -32,7 +32,7 @@
   "general": {
     "author": "Marcel Jänicke",
     "description": "Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'.",
-    "modRewriteIndex": false,
+    "modRewriteIndex": true,
     "name": "mdrza-ranking",
     "title": "MdRzA Ranking",
     "useDocker": false,

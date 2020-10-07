@@ -29,8 +29,8 @@ Some libraries could not be updated b/c of peer dependencies or knowing issues.
 
 | library    | current version | wanted version | reason |
 | ---------- | --------------- | -------------- | ------ |
-| zone.js | 0.10.3 | 0.11.1 | "@angular/core@10.1.3" has incorrect peer dependency "zone.js@~0.10.3" |
-| copy-webpack-plugin | 4.6.0 | 6.1.1 | "copy-webpack-plugin@6.1.1" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0" |
+| zone.js | 0.10.3 | 0.11.1 | "@angular/core@10.1.4" has incorrect peer dependency "zone.js@~0.10.3" |
+| copy-webpack-plugin | 4.6.0 | 6.2.0 | "copy-webpack-plugin@6.2.0" has unmet peer dependency "webpack@^4.0.0 || ^5.0.0" |
 
 ## Getting started
 

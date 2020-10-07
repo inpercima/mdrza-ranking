@@ -4,13 +4,13 @@
 
 Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'.
 
-This project was generated with [swaaplate](https://github.com/inpercima/swaaplate) version 2.0.0.
+This project was generated with [swaaplate](https://github.com/inpercima/swaaplate) version 2.0.1.
 
 ## Prerequisites
 
 ### Angular CLI
 
-* `angular-cli 10.1.3` or higher
+* `angular-cli 10.1.4` or higher
 
 ### Apache and php
 

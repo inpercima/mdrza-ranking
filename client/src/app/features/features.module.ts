@@ -1,7 +1,7 @@
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,7 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [ DashboardComponent ],
+  declarations: [DashboardComponent],
   imports: [
     ClipboardModule,
     CommonModule,
@@ -30,6 +30,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatTableModule,
     ReactiveFormsModule,
   ],
-  exports: [ DashboardComponent ],
+  exports: [DashboardComponent],
 })
 export class FeaturesModule { }

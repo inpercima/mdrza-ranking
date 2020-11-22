@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { FeaturesModule } from './features/features.module';
 
 @NgModule({
-  declarations: [ AppComponent ],
+  declarations: [AppComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -21,6 +21,6 @@ import { FeaturesModule } from './features/features.module';
     FeaturesModule,
   ],
   providers: [],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

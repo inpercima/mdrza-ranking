@@ -13,13 +13,13 @@ import { MdrzaService } from 'src/app/mdrza.service';
 })
 export class DashboardComponent implements OnInit {
 
-  filterForm: FormGroup;
+  filterForm!: FormGroup;
 
   dataSource = new MatTableDataSource();
 
   displayedColumns: string[] = ['rank', 'name', 'sumKm', 'sumDays', 'avgKm', 'avgDays', 'member'];
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private formBuilder: FormBuilder, private clipboard: Clipboard, private snackBar: MatSnackBar,
               private mdrzaService: MdrzaService) { }
@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
     this.filterForm = this.formBuilder.group({
       filter: ['', Validators.required]
     });
-    this.mdrzaService.list().subscribe(response => {
+    this.mdrzaService.list().subscribe((response: any) => {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
       this.dataSource.filterPredicate = (data: any, filterValue: string): boolean => {
@@ -55,8 +55,8 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  applyFilter(value: string): void {
-    this.dataSource.filter = value.trim().toLowerCase();
+  applyFilter(event: KeyboardEvent): void {
+    this.dataSource.filter = (event.target as HTMLInputElement).value.trim().toLowerCase();
   }
 
   onSubmit(): void {

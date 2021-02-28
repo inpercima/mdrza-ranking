@@ -4,7 +4,6 @@
 
 export const environment = {
   api: './api/',
-  apiSuffix: '',
   appname: 'MdRzA Ranking',
   defaultRoute: 'dashboard',
   production: false,

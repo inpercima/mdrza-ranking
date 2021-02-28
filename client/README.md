@@ -1,7 +1,7 @@
 # MdRzA Ranking - client
 
-[![dependencies Status](https://david-dm.org/inpercima/mdrza-ranking/status.svg?path=client)](https://david-dm.org/inpercima/mdrza-ranking?path=client)
-[![devDependencies Status](https://david-dm.org/inpercima/mdrza-ranking/dev-status.svg?path=client)](https://david-dm.org/inpercima/mdrza-ranking?path=client&type=dev)
+[![dependencies Status](https://status.david-dm.org/gh/inpercima/mdrza-ranking.svg?path=client)](https://david-dm.org/inpercima/mdrza-ranking?path=client)
+[![devDependencies Status](https://status.david-dm.org/gh/inpercima/mdrza-ranking.svg?path=client&type=dev)](https://david-dm.org/inpercima/mdrza-ranking?path=client&type=dev)
 
 ## Getting started
 
@@ -70,7 +70,6 @@ Change for prodMode the option `production` to `true`.
 ### Table of contents
 
 * [api](#api)
-* [apiSuffix](#apiSuffix)
 * [appname](#appname)
 * [defaultRoute](#defaultRoute)
 * [production](#production)
@@ -80,14 +79,7 @@ Change for prodMode the option `production` to `true`.
 
 Defines the URL to the backend.
 
-* default: `./api/`
-* type: `string`
-
-### `apiSuffix`
-
-Defines a suffix for the api to the backend.
-
-* default: EMPTY
+* default: `./`
 * type: `string`
 
 ### `appname`

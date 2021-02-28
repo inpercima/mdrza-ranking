@@ -5,7 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { MdrzaService } from 'src/app/mdrza.service';
+import { MdrzaService } from 'src/app/core/mdrza.service';
 
 @Component({
   selector: 'mr-dashboard',
@@ -13,7 +13,7 @@ import { MdrzaService } from 'src/app/mdrza.service';
 })
 export class DashboardComponent implements OnInit {
 
-  filterForm!: FormGroup;
+  form!: FormGroup;
 
   dataSource = new MatTableDataSource();
 
@@ -25,11 +25,11 @@ export class DashboardComponent implements OnInit {
               private mdrzaService: MdrzaService) { }
 
   get f(): any {
-    return this.filterForm.controls;
+    return this.form.controls;
   }
 
   ngOnInit(): void {
-    this.filterForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       filter: ['', Validators.required]
     });
     this.mdrzaService.list().subscribe((response: any) => {

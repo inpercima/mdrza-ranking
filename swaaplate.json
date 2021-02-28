@@ -12,7 +12,7 @@
       },
       "notFound": {
         "enabled": false,
-        "name": "not-found"
+        "name": ""
       },
       "routing": false
     },

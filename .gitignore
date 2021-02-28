@@ -8,6 +8,8 @@ config.prod.php
 # ignore all in '.vscode' b/c some vsc config files contain user specific content
 .vscode/*
 
+.classpath
+
 # end project specific
 
 # Created by https://www.toptal.com/developers/gitignore/api/node,angular,eclipse,intellij+all
@@ -249,6 +251,9 @@ jspm_packages/
 
 # Optional eslint cache
 .eslintcache
+
+# Optional stylelint cache
+.stylelintcache
 
 # Microbundle cache
 .rpt2_cache/

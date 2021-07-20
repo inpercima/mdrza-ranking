@@ -1,5 +1,18 @@
 <mat-toolbar fxLayoutAlign="space-between center" color="primary" class="mat-elevation-z4">
   {{ appname }}
-  <a mat-button href="https://www.mit-dem-rad-zur-arbeit.de/" target="_blank">Open MdRzA</a>
+  <div>
+    <button mat-button (click)="openDialog(dialog)">APP INFO</button>
+    |
+    <a mat-button href="https://www.mit-dem-rad-zur-arbeit.de/" target="_blank">Open MdRzA</a>
+  </div>
 </mat-toolbar>
+<ng-template #dialog>
+  <mat-dialog-content>
+    The goal of this app is to show the ranking of teams from MdRzA.
+    User can create a link to share or use themeself.
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+  </mat-dialog-actions>
+</ng-template>
 <mr-dashboard></mr-dashboard>

@@ -31,7 +31,7 @@
   },
   "general": {
     "author": "Marcel Jänicke",
-    "description": "Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'.",
+    "description": "Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'. Users can create a link to share or use himself.",
     "modRewriteIndex": true,
     "name": "mdrza-ranking",
     "title": "MdRzA Ranking",

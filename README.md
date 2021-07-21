@@ -3,6 +3,7 @@
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
 
 Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'.
+Users can create a link to share or use himself.
 
 This project was generated with [swaaplate](https://github.com/inpercima/swaaplate) version 2.3.1.
 

@@ -5,6 +5,8 @@
 Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'.
 Users can create a link to share or use himself.
 
+This app is online under [mdrza-ranking.inpercima.net](http://mdrza-ranking.inpercima.net).
+
 This project was generated with [swaaplate](https://github.com/inpercima/swaaplate) version 2.3.1.
 
 ## Prerequisites

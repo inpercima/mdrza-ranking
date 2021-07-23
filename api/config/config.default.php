@@ -7,6 +7,5 @@ class Config {
    */
   public function __construct() {}
 
-  const ANY_CONFIG = '';
 }
 ?>

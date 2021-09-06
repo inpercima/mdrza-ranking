@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  api: './api/',
+  api: 'https://www.mit-dem-rad-zur-arbeit.de/api/teamranking.php?trid=98',
   appname: 'MdRzA Ranking',
   defaultRoute: 'dashboard',
   production: false,

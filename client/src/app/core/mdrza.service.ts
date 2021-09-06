@@ -16,7 +16,7 @@ export class MdrzaService {
 
   list(): Observable<Team[]> {
     const teams: Team[] = [];
-    return this.httpClient.get<any>(environment.api + 'mdrza').pipe(map(response => {
+    return this.httpClient.get<any>(environment.api).pipe(map(response => {
       response.forEach((element: any) => {
         const team = {} as Team;
         team.name = element.teamname;

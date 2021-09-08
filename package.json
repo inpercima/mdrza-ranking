@@ -57,10 +57,10 @@
   "private": true,
   "repository": "https://github.com/inpercima/mdrza-ranking/",
   "scripts": {
-    "build:dev": "export NODE_ENV='dev' && ng lint && ng build --configuration=development",
+    "build:dev": "ng lint && ng build --configuration=development",
     "serve:dev": "ng serve -o --configuration=development",
-    "watch:dev": "export NODE_ENV='dev' && ng build --watch --configuration=development",
-    "build:prod": "export NODE_ENV='prod' && ng lint && ng build"
+    "watch:dev": "ng build --watch --configuration=development",
+    "build:prod": "ng lint && ng build"
   },
   "version": "1.0.0-SNAPSHOT"
 }

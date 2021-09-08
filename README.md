@@ -13,7 +13,7 @@ This project was generated with [swaaplate](https://github.com/inpercima/swaapla
 
 ### Angular CLI
 
-* `angular-cli 12.1.1` or higher
+* `angular-cli 12.2.5` or higher
 
 ### Apache and php
 
@@ -32,7 +32,8 @@ Some libraries could not be updated b/c of peer dependencies or knowing issues.
 
 | library    | current version | last version | reason |
 | ---------- | --------------- | ------------ | ------ |
-| rxjs       | 6.6.0           | 7.2.0        | "@angular/common@12.1.1" has incorrect peer dependency "rxjs@^6.5.3" |
+| rxjs       | 6.6.6           | 7.3.0        | "@angular/flex-layout@12.0.0-beta.34" has incorrect peer dependency "rxjs@^6.6.6" |
+| typescript | 4.3.2           | 4.4.2        | "@angular-devkit/build-angular@12.2.5" has incorrect peer dependency "typescript@~4.2.3 \|\| ~4.3.2 |
 | copy-webpack-plugin | 9.0.1  | 9.0.1        | "copy-webpack-plugin@9.0.1" has unmet peer dependency "webpack@^5.1.0 |
 
 ## Getting started

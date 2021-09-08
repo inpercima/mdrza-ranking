@@ -1,8 +1,8 @@
 # MdRzA Ranking
 
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
-[![dependencies Status](https://status.david-dm.org/gh/inpercima/swaaplate-hw.svg?path=hello-world)](https://david-dm.org/inpercima/swaaplate-hw?path=hello-world)
-[![devDependencies Status](https://status.david-dm.org/gh/inpercima/swaaplate-hw.svg?path=hello-world&type=dev)](https://david-dm.org/inpercima/swaaplate-hw?path=hello-world&type=dev)
+[![dependencies Status](https://status.david-dm.org/gh/inpercima/mdrza-ranking.svg)](https://david-dm.org/inpercima/mdrza-ranking)
+[![devDependencies Status](https://status.david-dm.org/gh/inpercima/mdrza-ranking.svg?type=dev)](https://david-dm.org/inpercima/mdrza-ranking?type=dev)
 
 Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'.
 Users can create a link to share or use himself.
@@ -117,14 +117,14 @@ Defines the URL to the backend.
 
 Applicationwide title of the app, displayed in title and toolbar.
 
-* default: `Hello world`
+* default: `MdRzA Ranking`
 * type: `string`
 
 ### `defaultRoute`
 
 The default route and the route to be redirected after a login if no route is stored or if a route does not exist.
 
-* default: `hello-world`
+* default: `mdrza-ranking`
 * type: `string`
 
 ### `production`

@@ -15,11 +15,6 @@ This project was generated with [swaaplate](https://github.com/inpercima/swaapla
 
 * `angular-cli 12.2.5` or higher
 
-### Apache and php
-
-* `Apache 2.4` or higher
-* `php 7.3` or higher
-
 ### Node, npm or yarn
 
 * `node 14.16.1` or higher in combination with
@@ -49,5 +44,3 @@ cd mdrza-ranking
 ### Modules
 
 For the client check [mdrza-ranking - client](./client).
-
-For the server check [mdrza-ranking - api](./api).

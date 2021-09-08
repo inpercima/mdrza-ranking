@@ -110,7 +110,7 @@ Change for prodMode the option `production` to `true`.
 
 Defines the URL to the backend.
 
-* default: `./`
+* default: `https://www.mit-dem-rad-zur-arbeit.de/api/teamranking.php?trid=98`
 * type: `string`
 
 ### `appname`

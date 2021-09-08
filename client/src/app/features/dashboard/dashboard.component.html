@@ -5,7 +5,7 @@
         <mat-form-field fxFlex="90" hintLabel="Enter the teams you want to see in contest and create a url to send to friends.">
           <input matInput placeholder="Teams" formControlName="filter" (keyup)="applyFilter($event)">
         </mat-form-field>
-        <button fxFlex="8" fxFlexOffset="2" mat-raised-button color="primary" [disabled]="true">URL</button>
+        <button fxFlex="8" fxFlexOffset="2" mat-raised-button color="primary" [disabled]="!this.form.valid">URL</button>
       </form>
       <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
       <mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource">

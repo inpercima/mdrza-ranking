@@ -50,13 +50,17 @@ export class DashboardComponent implements OnInit {
       const teams = new URL(location.href).searchParams.get('teams');
       if (teams) {
         this.f.filter.setValue(teams.trim());
-        this.applyFilter(this.f.filter.value);
+        this.setFilter(this.f.filter.value);
       }
     });
   }
 
   applyFilter(event: KeyboardEvent): void {
-    this.dataSource.filter = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.setFilter((event.target as HTMLInputElement).value);
+  }
+
+  private setFilter(value: string): void {
+    this.dataSource.filter = value.trim().toLowerCase();
   }
 
   onSubmit(): void {

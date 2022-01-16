@@ -33,7 +33,7 @@ cd mdrza-ranking
 yarn
 ```
 
-Create environment files for `devMode` and `prodMode`.
+Create environment files for `devMode` and `prodMode` if not exists.
 
 ```bash
 cp src/environments/environment.ts src/environments/environment.dev.ts

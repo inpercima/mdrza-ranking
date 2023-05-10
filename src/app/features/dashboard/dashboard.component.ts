@@ -2,10 +2,11 @@ import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 import { NgIf } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,19 +14,21 @@ import { MatInputModule } from '@angular/material/input';
 import { MdrzaService } from 'src/app/core/mdrza.service';
 
 @Component({
-    selector: 'mr-dashboard',
-    templateUrl: './dashboard.component.html',
-    standalone: true,
-    imports: [
-        MatCardModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        MatPaginatorModule,
-        NgIf,
-        MatTableModule,
-    ],
+  selector: 'mr-dashboard',
+  templateUrl: './dashboard.component.html',
+  standalone: true,
+  imports: [
+    HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatSnackBarModule,
+    MatTableModule,
+    NgIf,
+    ReactiveFormsModule,
+  ],
 })
 export class DashboardComponent implements OnInit {
 

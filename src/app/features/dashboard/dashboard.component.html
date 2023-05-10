@@ -4,7 +4,7 @@
       <div class="flex gap-5 items-center">
         <mat-form-field class="basis-11/12" hintLabel="Enter the teams you want to see in contest and create a url to send to friends.">
           <mat-label>Teams</mat-label>
-          <input matInput formControlName="filter" (keyup)="applyFilter($event)">
+          <input matInput formControlName="filter" (keyup)="applyFilter($event)" />
         </mat-form-field>
         <button class="flex-1" mat-raised-button color="primary" [disabled]="!this.form.valid">URL</button>
       </div>
@@ -14,7 +14,7 @@
       <!-- Rang Column -->
       <ng-container matColumnDef="rank">
         <mat-header-cell *matHeaderCellDef>Rang</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.rank}}</mat-cell>
+        <mat-cell *matCellDef="let element">{{ element.rank }}</mat-cell>
       </ng-container>
 
       <!-- Teamname Column -->
@@ -26,35 +26,35 @@
       <!-- Summe km Column -->
       <ng-container matColumnDef="sumKm">
         <mat-header-cell *matHeaderCellDef>Summe km</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.sumKm}}</mat-cell>
+        <mat-cell *matCellDef="let element">{{ element.sumKm }}</mat-cell>
       </ng-container>
 
       <!-- Summe Tage Column -->
       <ng-container matColumnDef="sumDays">
         <mat-header-cell *matHeaderCellDef fxHide.lt-sm="true">Summe Tage</mat-header-cell>
-        <mat-cell *matCellDef="let element" fxHide.lt-sm="true">{{element.sumDays}}</mat-cell>
+        <mat-cell *matCellDef="let element" fxHide.lt-sm="true">{{ element.sumDays }}</mat-cell>
       </ng-container>
 
       <!-- Avg Km Column -->
       <ng-container matColumnDef="avgKm">
         <mat-header-cell *matHeaderCellDef>Avg Km</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.avgKm}}</mat-cell>
+        <mat-cell *matCellDef="let element">{{ element.avgKm }}</mat-cell>
       </ng-container>
 
       <!-- Avg Tage Column -->
       <ng-container matColumnDef="avgDays">
         <mat-header-cell *matHeaderCellDef fxHide.lt-sm="true">Avg Tage</mat-header-cell>
-        <mat-cell *matCellDef="let element" fxHide.lt-sm="true">{{element.avgDays}}</mat-cell>
+        <mat-cell *matCellDef="let element" fxHide.lt-sm="true">{{ element.avgDays }}</mat-cell>
       </ng-container>
 
       <!-- Anzahl Mitglieder Column -->
       <ng-container matColumnDef="member">
         <mat-header-cell *matHeaderCellDef fxHide.lt-md="true">Anzahl Mitglieder</mat-header-cell>
-        <mat-cell *matCellDef="let element" fxHide.lt-md="true"> {{element.member}} </mat-cell>
+        <mat-cell *matCellDef="let element" fxHide.lt-md="true"> {{ element.member }} </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     </mat-table>
   </mat-card-content>
 </mat-card>

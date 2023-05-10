@@ -8,15 +8,13 @@ import { MaterialModule } from '../shared/material/material.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [
-    DashboardComponent,
-  ],
   imports: [
     ClipboardModule,
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
     MaterialModule,
+    DashboardComponent,
   ],
   exports: [
     DashboardComponent,

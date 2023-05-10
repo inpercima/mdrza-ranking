@@ -1,14 +1,24 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, TemplateRef } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { environment } from '../environments/environment';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 @Component({
   selector: 'mr-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [
+    MatToolbarModule,
+    MatButtonModule,
+    MatDialogModule,
+    DashboardComponent,
+  ],
 })
 export class AppComponent {
 

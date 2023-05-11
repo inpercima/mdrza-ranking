@@ -6,7 +6,6 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 import { NgIf } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -18,7 +17,6 @@ import { MdrzaService } from 'src/app/core/mdrza.service';
   templateUrl: './dashboard.component.html',
   standalone: true,
   imports: [
-    HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,

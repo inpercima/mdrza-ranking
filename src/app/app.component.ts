@@ -13,15 +13,9 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatDialogModule,
-    DashboardComponent,
-  ],
+  imports: [DashboardComponent, MatButtonModule, MatDialogModule, MatToolbarModule],
 })
 export class AppComponent {
-
   public appname: string;
 
   // Adds the custom theme to the app root.
@@ -36,7 +30,7 @@ export class AppComponent {
 
   openDialog(ref: TemplateRef<any>): void {
     this.dialog.open(ref, {
-      maxWidth: "800px",
+      maxWidth: '800px',
     });
   }
 }

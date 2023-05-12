@@ -19,7 +19,7 @@
 
       <!-- Teamname Column -->
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef>Teamname</mat-header-cell>
         <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
       </ng-container>
 
@@ -37,19 +37,19 @@
 
       <!-- Avg Km Column -->
       <ng-container matColumnDef="avgKm">
-        <mat-header-cell *matHeaderCellDef>Avg Km</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef>Durchschnitt km</mat-header-cell>
         <mat-cell *matCellDef="let element">{{ element.avgKm }}</mat-cell>
       </ng-container>
 
       <!-- Avg Tage Column -->
       <ng-container matColumnDef="avgDays">
-        <mat-header-cell *matHeaderCellDef fxHide.lt-sm="true">Avg Tage</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef fxHide.lt-sm="true">Durchschnitt Tage</mat-header-cell>
         <mat-cell *matCellDef="let element" fxHide.lt-sm="true">{{ element.avgDays }}</mat-cell>
       </ng-container>
 
       <!-- Anzahl Mitglieder Column -->
       <ng-container matColumnDef="member">
-        <mat-header-cell *matHeaderCellDef fxHide.lt-md="true">Anzahl Mitglieder</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef fxHide.lt-md="true">Anzahl Teilnehmende</mat-header-cell>
         <mat-cell *matCellDef="let element" fxHide.lt-md="true"> {{ element.member }} </mat-cell>
       </ng-container>
 

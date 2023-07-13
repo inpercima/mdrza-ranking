@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MdrzaService } from 'src/app/core/mdrza.service';
+import { Team } from 'src/app/core/team.model';
 
 @Component({
   selector: 'mr-dashboard',
@@ -31,7 +32,7 @@ import { MdrzaService } from 'src/app/core/mdrza.service';
 export class DashboardComponent implements OnInit {
   form!: FormGroup;
 
-  dataSource = new MatTableDataSource();
+  dataSource = new MatTableDataSource<Team>();
 
   displayedColumns: string[] = ['rank', 'name', 'sumKm', 'sumDays', 'avgKm', 'avgDays', 'member'];
 
@@ -44,6 +45,7 @@ export class DashboardComponent implements OnInit {
     private mdrzaService: MdrzaService
   ) {}
 
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   get f(): any {
     return this.form.controls;
   }
@@ -52,9 +54,10 @@ export class DashboardComponent implements OnInit {
     this.form = this.formBuilder.group({
       filter: ['', Validators.required],
     });
-    this.mdrzaService.list().subscribe((response: any) => {
+    this.mdrzaService.list().subscribe((response: Team[]) => {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
+      // eslint-disable-next-line  @typescript-eslint/no-explicit-any
       this.dataSource.filterPredicate = (data: any, filterValue: string): boolean => {
         filterValue = filterValue.slice(-1) === ',' ? filterValue.slice(0, -1) : filterValue;
         const filters = filterValue.trim().split(',');

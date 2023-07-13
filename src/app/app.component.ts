@@ -13,7 +13,7 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [DashboardComponent, MatButtonModule, MatDialogModule, MatToolbarModule],
+  imports: [MatButtonModule, MatDialogModule, MatToolbarModule, DashboardComponent],
 })
 export class AppComponent {
   public appname: string;

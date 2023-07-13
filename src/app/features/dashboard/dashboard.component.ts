@@ -29,7 +29,6 @@ import { MdrzaService } from 'src/app/core/mdrza.service';
   ],
 })
 export class DashboardComponent implements OnInit {
-
   form!: FormGroup;
 
   dataSource = new MatTableDataSource();
@@ -38,8 +37,12 @@ export class DashboardComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private formBuilder: FormBuilder, private clipboard: Clipboard, private snackBar: MatSnackBar,
-              private mdrzaService: MdrzaService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private clipboard: Clipboard,
+    private snackBar: MatSnackBar,
+    private mdrzaService: MdrzaService
+  ) {}
 
   get f(): any {
     return this.form.controls;
@@ -47,7 +50,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      filter: ['', Validators.required]
+      filter: ['', Validators.required],
     });
     this.mdrzaService.list().subscribe((response: any) => {
       this.dataSource = new MatTableDataSource(response);

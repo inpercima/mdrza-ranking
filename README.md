@@ -8,13 +8,13 @@ Users can create a link to share or use himself.
 
 This app is online under [mdrza-ranking.inpercima.net](http://mdrza-ranking.inpercima.net).
 
-This project was generated with [swaaplate](https://github.com/inpercima/swaaplate) version 2.5.1.
+This project was generated with [swaaplate](https://github.com/inpercima/swaaplate) version 2.5.3.
 
 ## Prerequisites
 
 ### Angular CLI
 
-* `@angular/cli 16.1.0` or higher
+* `@angular/cli 16.1.4` or higher
 
 ### Node, npm or yarn
 

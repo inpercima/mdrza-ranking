@@ -10,7 +10,7 @@ describe('DashboardComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, HttpClientTestingModule, DashboardComponent],
+      imports: [NoopAnimationsModule, HttpClientTestingModule],
     });
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;

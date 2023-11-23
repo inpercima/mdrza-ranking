@@ -10,8 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MdrzaService } from 'src/app/core/mdrza.service';
-import { Team } from 'src/app/core/team.model';
+import { MdrzaService } from '../../core/mdrza.service';
+import { Team } from '../../core/team.model';
 
 @Component({
   selector: 'mr-dashboard',

@@ -29,7 +29,7 @@
     },
     "packageJson": {
       "contributors": [{
-        "name": "Marcel Jänicke",
+        "name": "Marcel Hendrich",
         "email": "inpercima@gmail.com"
       }],
       "homepage": "http://mdrza-ranking.inpercima.net/",
@@ -41,7 +41,7 @@
     "useYarn": true
   },
   "general": {
-    "author": "Marcel Jänicke",
+    "author": "Marcel Hendrich",
     "description": "Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'. Users can create a link to share or use himself.",
     "modRewriteIndex": true,
     "name": "mdrza-ranking",

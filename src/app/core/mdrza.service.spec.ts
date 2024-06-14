@@ -2,13 +2,14 @@ import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { MdrzaService } from './mdrza.service';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('MdrzaService', () => {
   let service: MdrzaService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [provideHttpClientTesting()],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
     });
     service = TestBed.inject(MdrzaService);
   });

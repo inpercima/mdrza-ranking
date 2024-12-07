@@ -1,5 +1,5 @@
 import { Clipboard } from '@angular/cdk/clipboard';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
@@ -15,7 +15,6 @@ import { Team } from '../../core/team.model';
 @Component({
   selector: 'mr-dashboard',
   templateUrl: './dashboard.component.html',
-  standalone: true,
   imports: [
     MatButtonModule,
     MatCardModule,
@@ -28,7 +27,14 @@ import { Team } from '../../core/team.model';
   ],
 })
 export class DashboardComponent implements OnInit {
-  form!: FormGroup;
+  readonly #formBuilder = inject(FormBuilder);
+  readonly #clipboard = inject(Clipboard);
+  readonly #snackBar = inject(MatSnackBar);
+  readonly #mdrzaService = inject(MdrzaService);
+
+  form = this.#formBuilder.group({
+    filter: ['', Validators.required],
+  });
 
   dataSource = new MatTableDataSource<Team>();
 
@@ -36,23 +42,8 @@ export class DashboardComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private clipboard: Clipboard,
-    private snackBar: MatSnackBar,
-    private mdrzaService: MdrzaService
-  ) {}
-
-  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
-  get f(): any {
-    return this.form.controls;
-  }
-
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      filter: ['', Validators.required],
-    });
-    this.mdrzaService.list().subscribe((response: Team[]) => {
+    this.#mdrzaService.list().subscribe((response: Team[]) => {
       this.dataSource = new MatTableDataSource(response);
       this.dataSource.paginator = this.paginator;
       // eslint-disable-next-line  @typescript-eslint/no-explicit-any
@@ -70,8 +61,8 @@ export class DashboardComponent implements OnInit {
       };
       const teams = new URL(location.href).searchParams.get('teams');
       if (teams) {
-        this.f.filter.setValue(teams.trim());
-        this.setFilter(this.f.filter.value);
+        this.form.controls.filter.setValue(teams.trim());
+        this.setFilter(this.form.controls.filter.value!);
       }
     });
   }
@@ -86,9 +77,9 @@ export class DashboardComponent implements OnInit {
 
   onSubmit(): void {
     const url = new URL(location.href);
-    url.searchParams.set('teams', this.f.filter.value);
-    this.clipboard.copy(url.href);
-    this.snackBar.open('Teams copied to clipboard', 'Ready', {
+    url.searchParams.set('teams', this.form.controls.filter.value!);
+    this.#clipboard.copy(url.href);
+    this.#snackBar.open('Teams copied to clipboard', 'Ready', {
       duration: 3000,
       verticalPosition: 'top',
     });

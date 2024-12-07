@@ -1,4 +1,4 @@
-import { Component, Inject, TemplateRef } from '@angular/core';
+import { Component, TemplateRef, inject } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { Title } from '@angular/platform-browser';
 
@@ -12,20 +12,23 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
   selector: 'mr-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: true,
   imports: [MatButtonModule, MatDialogModule, MatToolbarModule, DashboardComponent],
 })
 export class AppComponent {
+  readonly #dialog = inject(MatDialog);
+  readonly #titleService = inject(Title);
+  readonly #document = inject<Document>(DOCUMENT);
+
   public appname: string;
 
-  public constructor(private dialog: MatDialog, private titleService: Title, @Inject(DOCUMENT) private document: Document) {
+  public constructor() {
     this.appname = environment.appname;
-    this.titleService.setTitle(this.appname);
-    this.document.body.classList.add(`${environment.theme}-theme`);
+    this.#titleService.setTitle(this.appname);
+    this.#document.body.classList.add(`${environment.theme}-theme`);
   }
 
   openDialog(ref: TemplateRef<Element>): void {
-    this.dialog.open(ref, {
+    this.#dialog.open(ref, {
       maxWidth: '800px',
     });
   }

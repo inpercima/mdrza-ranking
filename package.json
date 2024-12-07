@@ -18,7 +18,7 @@
     "@angular/platform-browser-dynamic": "19.0.3",
     "material-icons": "1.13.12",
     "rxjs": "7.8.1",
-    "tslib": "2.7.0",
+    "tslib": "2.8.1",
     "zone.js": "0.15.0"
   },
   "description": "Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'. Users can create a link to share or use himself.",
@@ -27,21 +27,21 @@
     "@angular/cli": "19.0.4",
     "@angular/compiler-cli": "19.0.3",
     "@cypress/schematic": "2.5.2",
-    "@types/jasmine": "5.1.4",
-    "angular-eslint": "18.3.0",
+    "@types/jasmine": "5.1.5",
+    "angular-eslint": "19.0.1",
     "autoprefixer": "10.4.20",
-    "cypress": "13.14.2",
-    "eslint": "9.9.1",
-    "jasmine-core": "5.2.0",
+    "cypress": "13.16.1",
+    "eslint": "9.16.0",
+    "jasmine-core": "5.5.0",
     "karma": "6.4.4",
     "karma-chrome-launcher": "3.2.0",
     "karma-coverage": "2.2.1",
     "karma-jasmine": "5.1.0",
     "karma-jasmine-html-reporter": "2.1.0",
-    "postcss": "8.4.45",
-    "tailwindcss": "3.4.4",
+    "postcss": "8.4.49",
+    "tailwindcss": "3.4.16",
     "typescript": "5.5.4",
-    "typescript-eslint": "8.4.0"
+    "typescript-eslint": "8.17.0"
   },
   "engines": {
     "node": ">=20.15.1"

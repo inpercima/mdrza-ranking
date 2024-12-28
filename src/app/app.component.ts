@@ -1,17 +1,16 @@
-import { Component, TemplateRef, inject } from '@angular/core';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { Title } from '@angular/platform-browser';
-
 import { DOCUMENT } from '@angular/common';
+import { Component, TemplateRef, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { Title } from '@angular/platform-browser';
 import { environment } from '../environments/environment';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 @Component({
   selector: 'mr-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrl: './app.component.css',
   imports: [MatButtonModule, MatDialogModule, MatToolbarModule, DashboardComponent],
 })
 export class AppComponent {
@@ -19,7 +18,7 @@ export class AppComponent {
   readonly #titleService = inject(Title);
   readonly #document = inject<Document>(DOCUMENT);
 
-  public appname: string;
+  appname: string;
 
   public constructor() {
     this.appname = environment.appname;

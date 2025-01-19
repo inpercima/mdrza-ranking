@@ -34,7 +34,6 @@ jobs:
         run: |
           commits=$(git log -1 --pretty=%B)
           echo "Commit message: $commits"
-
           if [[ "$commits" == *"BREAKING CHANGE"* ]]; then
             echo "::set-output name=type::major"
           elif [[ "$commits" == feat:* ]]; then

@@ -1,10 +1,13 @@
 export interface Mdrza {
+  data: Data[];
+}
+
+export interface Data {
   teamid: string;
   teamname: string;
-  Summe: string;
-  Tage: string;
+  summe: string;
+  tage: string;
   AnzTeammember: string;
-  region: string;
   AvgKM: number;
   AvgDays: number;
   rank: number;

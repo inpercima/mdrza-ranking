@@ -1,5 +1,5 @@
 export const environment = {
-  api: 'https://www.mit-dem-rad-zur-arbeit.de/api/teamranking.php?trid=98',
+  api: 'https://www.mdrza.de/api/statistik/teamranking/3',
   appname: 'MdRzA Ranking',
   defaultRoute: 'dashboard',
   production: true,

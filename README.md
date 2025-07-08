@@ -66,6 +66,12 @@ pnpm start
 pnpm build:prod
 ```
 
+### Lint
+
+```bash
+ng lint
+```
+
 ### Tests
 
 ```bash

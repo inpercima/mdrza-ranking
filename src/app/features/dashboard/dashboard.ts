@@ -12,8 +12,8 @@ import { MdrzaService } from '../../core/mdrza.service';
 import { Team } from '../../core/team.model';
 
 @Component({
-  selector: 'mr-dashboard',
-  templateUrl: './dashboard.component.html',
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.html',
   imports: [
     MatButtonModule,
     MatCardModule,
@@ -25,7 +25,7 @@ import { Team } from '../../core/team.model';
     ReactiveFormsModule,
   ],
 })
-export class DashboardComponent implements OnInit {
+export class Dashboard implements OnInit {
   readonly #formBuilder = inject(FormBuilder);
   readonly #clipboard = inject(Clipboard);
   readonly #snackBar = inject(MatSnackBar);

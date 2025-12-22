@@ -4,15 +4,15 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Title } from '@angular/platform-browser';
 import { environment } from '../environments/environment';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { Dashboard } from './features/dashboard/dashboard';
 
 @Component({
-  selector: 'mr-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  imports: [MatButtonModule, MatDialogModule, MatToolbarModule, DashboardComponent],
+  selector: 'app-root',
+  templateUrl: './app.html',
+  styleUrl: './app.css',
+  imports: [Dashboard, MatButtonModule, MatDialogModule, MatToolbarModule],
 })
-export class AppComponent {
+export class App {
   readonly #dialog = inject(MatDialog);
   readonly #titleService = inject(Title);
   readonly #document = inject<Document>(DOCUMENT);

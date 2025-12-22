@@ -1,32 +1,32 @@
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { AppComponent } from './app.component';
+import { App } from './app';
 
 describe('AppComponent', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [AppComponent, NoopAnimationsModule],
-      providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()],
-    }).compileComponents();
-  });
+  beforeEach(
+    async () =>
+      await TestBed.configureTestingModule({
+        imports: [App],
+        providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()],
+      }).compileComponents()
+  );
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
   it(`should have as appname 'MdRzA Ranking'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
     expect(app.appname).toEqual('MdRzA Ranking');
   });
 
-  it('should render toolbar', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
+  it('should render toolbar', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('mat-toolbar')?.textContent).toContain('MdRzA Ranking');
   });

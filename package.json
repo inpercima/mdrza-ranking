@@ -49,7 +49,7 @@
   "license": "MIT",
   "name": "mdrza-ranking",
   "private": true,
-  "repository": "https://github.com/inpercima/mdrza-ranking/",
+  "repository": "https://github.com/inpercima/mdrza-ranking.git",
   "scripts": {
     "build:dev": "ng lint && ng build --configuration=development",
     "build:prod": "ng lint && ng build",

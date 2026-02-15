@@ -1,4 +1,5 @@
-import { Component, DOCUMENT, TemplateRef, inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, TemplateRef, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';

@@ -2,6 +2,8 @@ import { DOCUMENT } from '@angular/common';
 import { Component, TemplateRef, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Title } from '@angular/platform-browser';
 import { environment } from '../environments/environment';
@@ -11,7 +13,7 @@ import { Dashboard } from './features/dashboard/dashboard';
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [Dashboard, MatButtonModule, MatDialogModule, MatToolbarModule],
+  imports: [Dashboard, MatButtonModule, MatDialogModule, MatIconModule, MatMenuModule, MatToolbarModule],
 })
 export class App {
   readonly #dialog = inject(MatDialog);

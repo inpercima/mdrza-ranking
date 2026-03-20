@@ -1,4 +1,4 @@
-name: Node CI/CD
+name: Node CI
 
 on:
   push:
@@ -6,8 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -28,8 +31,8 @@ jobs:
         run: |
           pnpm install --frozen-lockfile
           pnpm build:prod
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
         with:
-          branch: gh-pages
-          folder: dist/mdrza-ranking/browser
+          name: build
+          path: dist/mdrza-ranking/browser

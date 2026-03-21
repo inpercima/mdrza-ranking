@@ -1,26 +1,24 @@
 # MdRzA Ranking
 
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.md)
-[![Node CI/CD](https://github.com/inpercima/mdrza-ranking/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/inpercima/mdrza-ranking/actions/workflows/ci_cd.yml)
+[![Node CI](https://github.com/inpercima/mdrza-ranking/actions/workflows/node_ci.yml/badge.svg)](https://github.com/inpercima/mdrza-ranking/actions/workflows/node_ci.yml)
 
 Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'.
 Users can create a link to share or use himself.
 
 This app is online under [mdrza-ranking.inpercima.net](http://mdrza-ranking.inpercima.net).
 
-This project was generated with [swaaplate](https://github.com/inpercima/swaaplate) version 2.5.3.
-
 ## Prerequisites
 
 ### Angular CLI
 
-* `@angular/cli 21.1.4` or higher
+* `@angular/cli 21.2.3` or higher
 
 ### Node, npm or pnpm
 
-* `node 24.12.0` or higher in combination with
-  * `npm 11.6.2` or higher or
-  * `pnpm 10.29.3` or higher, used in this repository
+* `node 24.14.0` or higher in combination with
+  * `npm 11.9.0` or higher or
+  * `pnpm 10.32.0` or higher, used in this repository
 
 ## Getting started
 

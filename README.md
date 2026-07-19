@@ -10,32 +10,52 @@ This app is online under [mdrza-ranking.inpercima.net](http://mdrza-ranking.inpe
 
 ## Prerequisites
 
-### Angular CLI
-
-* `@angular/cli 21.2.3` or higher
-
 ### Node, npm or pnpm
 
-* `node 24.14.0` or higher in combination with
-  * `npm 11.9.0` or higher or
-  * `pnpm 10.32.0` or higher, used in this repository
+- `node 24.16.0` or higher in combination with
+  - `npm 11.13.0` or higher or
+  - `pnpm 11.14.0` or higher, used in this repository
+
+Install pnpm by running:
+
+```bash
+npm install -g pnpm@11.8.0
+```
+
+### Info for npm and pnpm
+
+This repo uses `pnpm` as package manager.
+You can also use `npm` for your local work but changes will be made by `pnpm` only.
+
+### Angular CLI
+
+- `@angular/cli 22.0.5` or higher
+
+Install @angular/cli by running:
+
+```bash
+pnpm install -g @angular/cli@22
+```
 
 ## Getting started
+
+### Clone project
 
 ```bash
 # clone project
 git clone https://github.com/inpercima/mdrza-ranking/
+
+# navigate to the project
 cd mdrza-ranking
 
 # install tools and frontend dependencies
 pnpm install
 ```
 
-Create environment files for `development mode` and `production mode`.
+Create environment files for `development mode`.
 
 ```bash
 cp src/environments/environment.ts src/environments/environment.dev.ts
-cp src/environments/environment.ts src/environments/environment.prod.ts
 ```
 
 **Note**: These files will not be under version control but listed in .gitignore.
@@ -90,47 +110,47 @@ Change for `production mode` the option `production` to `true`.
 
 ### Table of contents
 
-* [api](#api)
-* [appname](#appname)
-* [defaultRoute](#defaultroute)
-* [production](#production)
-* [theme](#theme)
+- [api](#api)
+- [appname](#appname)
+- [defaultRoute](#defaultroute)
+- [production](#production)
+- [theme](#theme)
 
 ### `api`
 
 Defines the URL to the backend.
 
-* default: `https://www.mit-dem-rad-zur-arbeit.de/api/teamranking.php?trid=98`
-* type: `string`
+- default: `https://www.mit-dem-rad-zur-arbeit.de/api/teamranking.php?trid=98`
+- type: `string`
 
 ### `appname`
 
 Applicationwide title of the app, displayed in title and toolbar.
 
-* default: `MdRzA Ranking`
-* type: `string`
+- default: `MdRzA Ranking`
+- type: `string`
 
 ### `defaultRoute`
 
 The default route and the route to be redirected after a login if no route is stored or if a route does not exist.
 
-* default: `dashboard`
-* type: `string`
+- default: `dashboard`
+- type: `string`
 
 ### `production`
 
 Defines whether the app is in production or not.
 
-* default: `false`
-* type: `boolean`
-* values: `true`/`false`
+- default: `false`
+- type: `boolean`
+- values: `true`/`false`
 
 ### `theme`
 
 Name of a pre-build-theme or a custom theme.
 
-* default: `rose-red`
-* type: `string`
-* values: `rose-red`/`azure-blue`/`magenta-violet`/`cyan-orange`/`custom`
+- default: `rose-red`
+- type: `string`
+- values: `rose-red`/`azure-blue`/`magenta-violet`/`cyan-orange`/`custom`
 
 To modify the custom theme just edit the colors and themes in `themes.scss`.

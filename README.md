@@ -6,20 +6,20 @@
 Shows the ranking of teams for 'MdRzA - Mit dem Rad zur Arbeit'.
 Users can create a link to share or use himself.
 
-This app is online under [mdrza-ranking.inpercima.net](http://mdrza-ranking.inpercima.net).
+This app is available at [mdrza-ranking.inpercima.net](http://mdrza-ranking.inpercima.net).
 
 ## Prerequisites
 
 ### Node, npm or pnpm
 
-- `node 24.16.0` or higher in combination with
-  - `npm 11.13.0` or higher or
-  - `pnpm 11.14.0` or higher, used in this repository
+* `node 24.16.0` or higher in combination with
+  * `npm 11.13.0` or higher or
+  * `pnpm 11.14.0` or higher, used in this repository
 
 Install pnpm by running:
 
 ```bash
-npm install -g pnpm@11.8.0
+npm install -g pnpm@11.14.0
 ```
 
 ### Info for npm and pnpm
@@ -29,7 +29,7 @@ You can also use `npm` for your local work but changes will be made by `pnpm` on
 
 ### Angular CLI
 
-- `@angular/cli 22.0.5` or higher
+* `@angular/cli 22.0.5` or higher
 
 Install @angular/cli by running:
 
@@ -50,54 +50,72 @@ cd mdrza-ranking
 
 # install tools and frontend dependencies
 pnpm install
-```
 
-Create environment files for `development mode`.
-
-```bash
+# create environment files for `development mode`.
 cp src/environments/environment.ts src/environments/environment.dev.ts
 ```
 
-**Note**: These files will not be under version control but listed in .gitignore.
+**Note**: This file will not be under version control (listed in .gitignore).
 
-## Usage
+## Development Mode
 
-### Recommendation
+### Setup for development
 
-It is recommended to use a server to get full access of all angular.
-For the other options your app should run on a server which you like.
+Edit `src/environments/environment.dev.ts` to match your local setup:
 
-### Run in development mode
+* Set `production: false`
+* Configure `api` URL (default: `./api/`)
+* Adjust other settings as needed (see [Configuration](#configuration) section)
+
+### Running in development mode
 
 ```bash
-# build, reachable on http://localhost/app/path/to/dist/
-pnpm build:dev
-
-# build and starts a server, rebuild after changes, reachable on http://localhost:4200/
 pnpm start
 ```
 
-### Package
+The application will be available at [http://localhost:4200/](http://localhost:4200/) and automatically reload when you make changes to the source code.
+
+### Building for development
 
 ```bash
-# build in production mode, compressed
+pnpm build:dev
+```
+
+This runs `ng lint` followed by `ng build --configuration=development`, creating a development build in the `dist/` directory.
+
+## Production Mode
+
+### Setup for production
+
+Edit `src/environments/environment.prod.ts`:
+
+* Set `production: true`
+* Configure production `api` URL
+* Set appropriate theme and other production-specific settings
+
+### Building for production
+
+```bash
 pnpm build:prod
 ```
 
-### Lint
+This runs `ng lint` followed by `ng build` (production configuration), creating an optimized bundle in `dist/browser/`.
+
+### Deployment
+
+After a push to the main branch the app will be deployed by the github actions using github pages.
+
+## Testing and linting
 
 ```bash
-ng lint
-```
-
-### Tests
-
-```bash
-# test
+# run unit tests
 ng test
 
-# e2e
+# run end-to-end tests
 ng e2e
+
+# lint files
+ng lint
 ```
 
 ## Configuration
@@ -110,47 +128,39 @@ Change for `production mode` the option `production` to `true`.
 
 ### Table of contents
 
-- [api](#api)
-- [appname](#appname)
-- [defaultRoute](#defaultroute)
-- [production](#production)
-- [theme](#theme)
+* [api](#api)
+* [appname](#appname)
+* [production](#production)
+* [theme](#theme)
 
 ### `api`
 
 Defines the URL to the backend.
 
-- default: `https://www.mit-dem-rad-zur-arbeit.de/api/teamranking.php?trid=98`
-- type: `string`
+* default: `./`
+* type: `string`
 
 ### `appname`
 
 Applicationwide title of the app, displayed in title and toolbar.
 
-- default: `MdRzA Ranking`
-- type: `string`
-
-### `defaultRoute`
-
-The default route and the route to be redirected after a login if no route is stored or if a route does not exist.
-
-- default: `dashboard`
-- type: `string`
+* default: `Davengo results`
+* type: `string`
 
 ### `production`
 
 Defines whether the app is in production or not.
 
-- default: `false`
-- type: `boolean`
-- values: `true`/`false`
+* default: `false`
+* type: `boolean`
+* values: `true`/`false`
 
 ### `theme`
 
 Name of a pre-build-theme or a custom theme.
 
-- default: `rose-red`
-- type: `string`
-- values: `rose-red`/`azure-blue`/`magenta-violet`/`cyan-orange`/`custom`
+* default: `rose-red`
+* type: `string`
+* values: `rose-red`/`azure-blue`/`magenta-violet`/`cyan-orange`/`custom`
 
 To modify the custom theme just edit the colors and themes in `themes.scss`.

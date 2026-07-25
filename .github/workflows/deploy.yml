@@ -17,6 +17,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
@@ -24,8 +25,14 @@ jobs:
           path: dist/mdrza-ranking/browser
           github-token: ${{ secrets.GITHUB_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
+
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
         with:
-          branch: gh-pages
-          folder: dist/mdrza-ranking/browser
+          username: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_SERVER }}
+          port: ${{ secrets.FTP_PORT }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_path: "./dist/mdrza-ranking/browser/*"
+          remote_path: "./"
+          sftp_only: true

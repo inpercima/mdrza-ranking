@@ -12,25 +12,28 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [24]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 10
-      - name: Use Node.js ${{ matrix.node-version }}
+
+      - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 24.16
           cache: "pnpm"
+          cache-dependency-path: ./pnpm-lock.yaml
+
       - name: Install and Build
         run: |
           pnpm install --frozen-lockfile
           pnpm build:prod
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:

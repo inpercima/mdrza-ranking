@@ -1,5 +1,5 @@
 export const environment = {
-  api: 'https://www.mdrza.de/api/statistik/teamranking/3',
+  api: './rest/',
   appname: 'MdRzA Ranking',
   production: true,
   theme: 'rose-red',

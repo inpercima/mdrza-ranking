@@ -27,13 +27,12 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
 
       - name: Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.5
         with:
           username: ${{ secrets.FTP_USERNAME }}
           server: ${{ secrets.FTP_SERVER }}
           port: ${{ secrets.FTP_PORT }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_path: "./dist/mdrza-ranking/browser/*"
+          local_path: "./frontend/dist/frontend/*"
           remote_path: "./"
           sftp_only: true
-          sftpArgs: "-o HostKeyAlgorithms=+ssh-rsa -o KexAlgorithms=+diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512"

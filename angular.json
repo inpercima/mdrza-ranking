@@ -31,6 +31,16 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "ignore": [
+                  "**/config.default.php",
+                  "**/config.dev.php",
+                  "**/README.md"
+                ],
+                "input": "./api/",
+                "output": "/api/"
               }
             ],
             "styles": [

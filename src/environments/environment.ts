@@ -1,5 +1,5 @@
 export const environment = {
-  api: './rest/',
+  api: './api/rest/',
   appname: 'MdRzA Ranking',
   production: false,
   theme: 'rose-red',

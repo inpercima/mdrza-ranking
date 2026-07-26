@@ -1,6 +1,9 @@
 {
-  "/rest/**": {
+  "/api/rest/**": {
     "target": "http://localhost:80",
-    "secure": false
+    "secure": false,
+    "pathRewrite": {
+      "^/api/rest": "rest"
+    }
   }
 }

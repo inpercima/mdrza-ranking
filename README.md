@@ -97,7 +97,7 @@ Edit `src/environments/environment.prod.ts`:
 pnpm build:prod
 ```
 
-This runs `ng lint` followed by `ng build` (production configuration), creating an optimized bundle in `dist/browser/`.
+This runs `ng lint` followed by `ng build` (production configuration), creating an optimized bundle in `dist/`.
 
 ### Deployment
 

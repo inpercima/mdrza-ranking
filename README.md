@@ -14,12 +14,12 @@ This app is available at [mdrza-ranking.inpercima.net](http://mdrza-ranking.inpe
 
 * `node 24.16.0` or higher in combination with
   * `npm 11.13.0` or higher or
-  * `pnpm 10.34.4` or higher, used in this repository
+  * `pnpm 11.24.0` or higher, used in this repository
 
 Install pnpm by running:
 
 ```bash
-npm install -g pnpm@10.34.4
+npm install -g pnpm@11.24.0
 ```
 
 ### Info for npm and pnpm
@@ -29,7 +29,7 @@ You can also use `npm` for your local work but changes will be made by `pnpm` on
 
 ### Angular CLI
 
-* `@angular/cli 22.0.7` or higher
+* `@angular/cli 22.2.0` or higher
 
 Install @angular/cli by running:
 

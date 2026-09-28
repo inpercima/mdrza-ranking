@@ -2,9 +2,12 @@ name: Node CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -17,17 +20,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install pnpm
+      - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10
+          version: 11
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24.16
           cache: "pnpm"
-          cache-dependency-path: ./pnpm-lock.yaml
 
       - name: Install and Build
         run: |
